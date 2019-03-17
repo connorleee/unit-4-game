@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+    <head>
+        <meta charset = "UTF8">
+        <title>Crystal Collector Game</title>
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css">
+               
+
+    </head>
+    <body>
+         <div class="container">
+             <!-- Row 1 -->
+            <div class="row"> 
+                <div class="col-md-12">
+                    <h1> Crystal Collector Game!</h1>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="row">
+                <div class="col-md-12">
+                    <p>You will be given a random number at the start of the game.</p>
+                    <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+                    <p>You win the game by matching your total score to random number. You lose the game if your total score goes above the random number.</p>
+                    <p>The value of each crystal is hidden from you until you click on it.</p>
+                    <p>Each time when the game starts, the game will change the value of each crystal</p>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 id="target-score"></h2>
+                </div>
+                <div class="col-md-4">
+                    <!-- Subrow 1: previous game result -->
+                    <div class = row>
+                        <p id="previous-game-results"></p>
+                    </div>
+                    <!-- Subrow 2 Win count -->
+                    <div class = row>
+                        <p id="win-count">Wins: </p>
+                    </div>
+                    <!-- Subrow 3 Loss count -->
+                    <div class = row>
+                        <p id="loss-count">Losses: </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="row">
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3">
+
+                </div>
+            </div>
+
+            <!-- Row 5 -->
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Your total score is: </p>
+                </div>
+            </div>
+
+            <!-- Row 6 -->
+            <div class="row">
+                <div class="col-md-12">
+                    <p id="total"></p>
+                </div>
+            </div>
+            
+        </div>
+        
+
+
+
+        <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="assets/javascript/game.js"></script>
+    </body>
+</html>
