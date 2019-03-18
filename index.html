@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang = "en-us">
+<html lang="en-us">
     <head>
-        <meta charset = "UTF8">
+        <meta charset="UTF-8">
         <title>Crystal Collector Game</title>
         <link rel="stylesheet" href="assets/css/reset.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
-               
-
     </head>
     <body>
          <div class="container">
@@ -20,7 +18,7 @@
 
             <!-- Row 2 -->
             <div class="row mb-1">
-                <div class="col-md-12 bg-info">
+                <div class="col-md-12 bg-info text-light">
                     <p>You will be given a random number at the start of the game.</p>
                     <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
                     <p>You win the game by matching your total score to random number. You lose the game if your total score goes above the random number.</p>
@@ -31,52 +29,52 @@
 
             <!-- Row 3 -->
             <div class="row mb-1">
-                <div class="col-md-8">
-                    <h2 id="target-score"></h2>
+                <div class="col-md-8 bg-success">
+                    <h2 id="target-score" class="font-weight-bold"></h2>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 bg-light">
                     <!-- Subrow 1: previous game result -->
-                    <div class = row>
+                    <div class = "row p-1">
                         <p id="previous-game-results"></p>
                     </div>
                     <!-- Subrow 2 Win count -->
-                    <div class = row>
+                    <div class = "row p-1">
                         <p id="win-count">Wins: </p>
                     </div>
                     <!-- Subrow 3 Loss count -->
-                    <div class = row>
+                    <div class = "row p-1">
                         <p id="loss-count">Losses: </p>
                     </div>
                 </div>
             </div>
 
             <!-- Row 4 gems -->
-            <div class="row mb-1">
+            <div class="row mb-1 bg-dark p-2">
                 <div class="col-md-3">
-                    
+                    <img class="w-100" src="assets/images/gem1.jpg" alt="Gem 1" >
                 </div>
                 <div class="col-md-3">
-
+                    <img class="w-100" src="assets/images/gem2.png" alt="Gem 2">  
                 </div>
                 <div class="col-md-3">
-
+                    <img class="w-100" src="assets/images/gem3.jpg" alt="Gem 3">     
                 </div>
                 <div class="col-md-3">
-
+                    <img class="w-100" src="assets/images/gem4.jpg" alt="Gem 4">
                 </div>
             </div>
 
             <!-- Row 5 -->
-            <div class="row mb-1">
+            <div class="row mb-1 bg-danger">
                 <div class="col-md-12">
-                    <p>Your total score is: </p>
+                    <h3>Your total score is: </h3>
                 </div>
             </div>
 
             <!-- Row 6 -->
-            <div class="row">
+            <div class="row bg-danger min-vh-10">
                 <div class="col-md-12">
-                    <p id="total"></p>
+                    <h2 id="total" class="font-weight-bold">0</h2>
                 </div>
             </div>
             
