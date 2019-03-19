@@ -16,21 +16,27 @@ function rndNumTarget(){
 // function to generate random gem values 1-12 per game on reset
 function rndNumGem(){
     var gemNum1 = Math.floor(Math.random()*12 + 1)
-    // $("#gem1").    Need to figure out method to tie to button click
+    $("#gem1").attr('value', gemNum1);    
     
     var gemNum2 = Math.floor(Math.random()*12 + 1)
-    // $("#gem2").
+    $("#gem2").attr('value', gemNum2);    
     
     var gemNum3 = Math.floor(Math.random()*12 + 1)
-    // $("#gem3").
+    $("#gem3").attr('value', gemNum3);    
     
     var gemNum4 = Math.floor(Math.random()*12 + 1)
-    // $("#gem4").
+    $("#gem4").attr('value', gemNum4);    
 }
 
 // on click function to add specific (but random per game) values to total score
 $(".btn").click(function(){
-    console.log("YUPPPP");
+    totalScore = totalScore + parseInt($('#gem1').attr('value'));
+    
+    // Write to total score div
+    $('#total').text(totalScore);
+
+    console.log(parseInt($('img').attr('value')));
+    // console.log(totalScore);
 })
 
 // gamePlay function to run the main logic of the game
@@ -44,6 +50,7 @@ function reset(){
     totalScore = 0;
     gameOver = false;
     rndNumTarget();
+    rndNumGem();
     
 
 }
