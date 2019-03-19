@@ -3,7 +3,7 @@ var wins = 0;
 var losses = 0;
 var prevGameResults = "";
 var totalScore = 0;
-var gameOver = false;
+var targetNum = 0;
 
 // function to generate random target number between 19-120. display to div
 function rndNumTarget(){
@@ -11,48 +11,65 @@ function rndNumTarget(){
     console.log("Target Number: " + targetNum);
 
     $("#target-score").text(targetNum);
+    return targetNum;
 }
 
 // function to generate random gem values 1-12 per game on reset
 function rndNumGem(){
-    var gemNum1 = Math.floor(Math.random()*12 + 1)
-    $("#gem1").attr('value', gemNum1);    
+    $("#gem1").attr('value', Math.floor(Math.random()*12 + 1));    
     
-    var gemNum2 = Math.floor(Math.random()*12 + 1)
-    $("#gem2").attr('value', gemNum2);    
+    $("#gem2").attr('value', Math.floor(Math.random()*12 + 1));    
     
-    var gemNum3 = Math.floor(Math.random()*12 + 1)
-    $("#gem3").attr('value', gemNum3);    
+    $("#gem3").attr('value', Math.floor(Math.random()*12 + 1));    
     
-    var gemNum4 = Math.floor(Math.random()*12 + 1)
-    $("#gem4").attr('value', gemNum4);    
+    $("#gem4").attr('value', Math.floor(Math.random()*12 + 1));    
 }
 
 // on click function to add specific (but random per game) values to total score
-$(".btn").click(function(){
+$("#gem1").click(function(){
     totalScore = totalScore + parseInt($('#gem1').attr('value'));
-    
-    // Write to total score div
     $('#total').text(totalScore);
+})
 
-    console.log(parseInt($('img').attr('value')));
-    // console.log(totalScore);
+$("#gem2").click(function(){
+    totalScore = totalScore + parseInt($('#gem2').attr('value'));
+    $('#total').text(totalScore);
+})
+
+$("#gem3").click(function(){
+    totalScore = totalScore + parseInt($('#gem3').attr('value'));
+    $('#total').text(totalScore);
+})
+
+$("#gem4").click(function(){
+    totalScore = totalScore + parseInt($('#gem4').attr('value'));
+    $('#total').text(totalScore);
 })
 
 // gamePlay function to run the main logic of the game
+function gamePlay(){
+    // win case: total score equals target number. reset
+    if (totalScore === targetNum){
+        wins++;
+        $('#previous-game-results').text('You won!');
+        reset();
+    }
 
-// win case: total score equals target number. treigger gameOver boolean and reset
-
-// loss case: total score > target number. trigger gameOver boolean and reset
+    // loss case: total score > target number. reset
+    if (totalScore > targetNum){
+        losses++;
+        $('#previous-game-results').text('You lost!');
+        reset();
+    }
+}
 
 // reset function to start game
 function reset(){
     totalScore = 0;
-    gameOver = false;
-    rndNumTarget();
+    $('#total').text(totalScore);
+    // rndNumTarget();
     rndNumGem();
-    
-
+    gamePlay();
 }
 
 reset();
