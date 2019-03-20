@@ -3,15 +3,14 @@ var wins = 0;
 var losses = 0;
 var prevGameResults = "";
 var totalScore = 0;
-var targetNum = 0;
+var targetNum;
 
 // function to generate random target number between 19-120. display to div
 function rndNumTarget(){
-    var targetNum = 18 + Math.floor(Math.random()*102 + 1);
+    targetNum = 18 + Math.floor(Math.random()*102 + 1);
     console.log("Target Number: " + targetNum);
 
     $("#target-score").text(targetNum);
-    return targetNum;
 }
 
 // function to generate random gem values 1-12 per game on reset
@@ -67,7 +66,7 @@ function gamePlay(){
 function reset(){
     totalScore = 0;
     $('#total').text(totalScore);
-    // rndNumTarget();
+    rndNumTarget();
     rndNumGem();
     gamePlay();
 }
