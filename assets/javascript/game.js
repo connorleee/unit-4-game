@@ -15,38 +15,43 @@ function rndNumTarget(){
     return targetNum;
 }
 
+function rndNumForGem(){
+    var num = Math.floor(Math.random()*12 + 1);
+    return num;
+}
+
 // function to generate random gem values 1-12 per game on reset
 function rndNumGem(){
-    $("#gem1").attr('value', Math.floor(Math.random()*12 + 1));    
+    $("#gem1").attr('value', rndNumForGem());    
+
+    $("#gem2").attr('value', rndNumForGem());    
     
-    $("#gem2").attr('value', Math.floor(Math.random()*12 + 1));    
+    $("#gem3").attr('value', rndNumForGem());    
     
-    $("#gem3").attr('value', Math.floor(Math.random()*12 + 1));    
-    
-    $("#gem4").attr('value', Math.floor(Math.random()*12 + 1));    
+    $("#gem4").attr('value', rndNumForGem());    
 }
 
 // on click function to add specific (but random per game) values to total score
 $("#gem1").click(function(){
-    totalScore = totalScore + parseInt($('#gem1').attr('value'));
+    totalScore += parseInt($('#gem1').attr('value'));
     $('#total').text(totalScore);
     scoreCheck(targetNum);
 })
 
 $("#gem2").click(function(){
-    totalScore = totalScore + parseInt($('#gem2').attr('value'));
+    totalScore += parseInt($('#gem2').attr('value'));
     $('#total').text(totalScore);
     scoreCheck(targetNum);
 })
 
 $("#gem3").click(function(){
-    totalScore = totalScore + parseInt($('#gem3').attr('value'));
+    totalScore += parseInt($('#gem3').attr('value'));
     $('#total').text(totalScore);
     scoreCheck(targetNum);
 })
 
 $("#gem4").click(function(){
-    totalScore = totalScore + parseInt($('#gem4').attr('value'));
+    totalScore += parseInt($('#gem4').attr('value'));
     $('#total').text(totalScore);
     scoreCheck(targetNum);
 })
@@ -68,7 +73,6 @@ function scoreCheck(input){
         $('#previous-game-results').text('You lost!');
         reset();
     }
-    console.log("lol")
 }
 
 // reset function to start game
