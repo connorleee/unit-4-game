@@ -23,11 +23,8 @@ function rndNumForGem(){
 // function to generate random gem values 1-12 per game on reset
 function rndNumGem(){
     $("#gem1").attr('value', rndNumForGem());    
-
-    $("#gem2").attr('value', rndNumForGem());    
-    
-    $("#gem3").attr('value', rndNumForGem());    
-    
+    $("#gem2").attr('value', rndNumForGem());       
+    $("#gem3").attr('value', rndNumForGem());       
     $("#gem4").attr('value', rndNumForGem());    
 }
 
