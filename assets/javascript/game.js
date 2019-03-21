@@ -11,6 +11,8 @@ function rndNumTarget(){
     console.log("Target Number: " + targetNum);
 
     $("#target-score").text(targetNum);
+
+    return targetNum;
 }
 
 // function to generate random gem values 1-12 per game on reset
@@ -28,47 +30,53 @@ function rndNumGem(){
 $("#gem1").click(function(){
     totalScore = totalScore + parseInt($('#gem1').attr('value'));
     $('#total').text(totalScore);
+    scoreCheck(targetNum);
 })
 
 $("#gem2").click(function(){
     totalScore = totalScore + parseInt($('#gem2').attr('value'));
     $('#total').text(totalScore);
+    scoreCheck(targetNum);
 })
 
 $("#gem3").click(function(){
     totalScore = totalScore + parseInt($('#gem3').attr('value'));
     $('#total').text(totalScore);
+    scoreCheck(targetNum);
 })
 
 $("#gem4").click(function(){
     totalScore = totalScore + parseInt($('#gem4').attr('value'));
     $('#total').text(totalScore);
+    scoreCheck(targetNum);
 })
 
 // gamePlay function to run the main logic of the game
-function gamePlay(){
+function scoreCheck(input){   
     // win case: total score equals target number. reset
-    if (totalScore === targetNum){
+    if (totalScore === input){
         wins++;
+        $('#win-count').text("Wins: " + wins);
         $('#previous-game-results').text('You won!');
         reset();
     }
-
+    
     // loss case: total score > target number. reset
-    if (totalScore > targetNum){
+    if (totalScore > input){
         losses++;
+        $('#loss-count').text("Losses: " + losses);
         $('#previous-game-results').text('You lost!');
         reset();
     }
+    console.log("lol")
 }
 
 // reset function to start game
 function reset(){
     totalScore = 0;
     $('#total').text(totalScore);
-    rndNumTarget();
     rndNumGem();
-    gamePlay();
+    targetNum = rndNumTarget();
 }
 
 reset();
